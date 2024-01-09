@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.finalproject.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_profilingFragment"
+            app:destination="@id/profilingFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilingFragment"
+        android:name="com.example.finalproject.ui.profiling.ProfilingFragment"
+        android:label="fragment_profiling"
+        tools:layout="@layout/fragment_profiling" >
+        <argument
+            android:name="isNewAccount"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_profilingFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/profilingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.finalproject.ui.info.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" >
+        <action
+            android:id="@+id/action_infoFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/infoFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.finalproject.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_profilingFragment"
+            app:destination="@id/profilingFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_profileFragment_to_myPostsFragment"
+            app:destination="@id/myPostsFragment" />
+
+        <action
+            android:id="@+id/action_profileFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/myPostsFragment"
+        android:name="com.example.finalproject.ui.posts.MyPostsFragment"
+        android:label="fragment_my_posts"
+        tools:layout="@layout/fragment_my_posts" >
+        <action
+            android:id="@+id/action_myPostsFragment_to_postImageFragment"
+            app:destination="@id/postImageFragment" />
+        <action
+            android:id="@+id/action_myPostsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postImageFragment"
+        android:name="com.example.finalproject.ui.posts.newpost.PostImageFragment"
+        android:label="fragment_post_image"
+        tools:layout="@layout/fragment_post_image" >
+        <action
+            android:id="@+id/action_postImageFragment_to_postAddressFragment"
+            app:destination="@id/postAddressFragment" />
+        <action
+            android:id="@+id/action_postImageFragment_to_myPostsFragment"
+            app:destination="@id/myPostsFragment"
+            app:popUpTo="@id/postImageFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailFragment"
+        android:name="com.example.finalproject.ui.posts.newpost.PostDetailFragment"
+        android:label="fragment_post_detail"
+        tools:layout="@layout/fragment_post_detail" />
+    <fragment
+        android:id="@+id/postAddressFragment"
+        android:name="com.example.finalproject.ui.posts.newpost.PostAddressFragment"
+        android:label="fragment_post_address"
+        tools:layout="@layout/fragment_post_address" >
+        <action
+            android:id="@+id/action_postAddressFragment_to_postDetailFragment"
+            app:destination="@id/postDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.finalproject.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="post"
+            app:argType="com.example.finalproject.model.HomePost" />
+        <argument
+            android:name="isMyPost"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+        <action
+            android:id="@+id/action_detailFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.finalproject.ui.favorites.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.finalproject.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="com.example.finalproject.ui.matches.MatchesFragment"
+        android:label="fragment_matches"
+        tools:layout="@layout/fragment_matches" >
+        <action
+            android:id="@+id/action_matchesFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.example.finalproject.ui.messages.MessagesFragment"
+        android:label="fragment_messages"
+        tools:layout="@layout/fragment_messages" >
+        <action
+            android:id="@+id/action_messagesFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.finalproject.ui.messages.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <argument
+            android:name="ownerID"
+            app:argType="string" />
+        <argument
+            android:name="ownerPhoto"
+            app:argType="string" />
+        <argument
+            android:name="ownerName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_chatFragment_to_messagesFragment"
+            app:destination="@id/messagesFragment" />
+    </fragment>
+</navigation>
