@@ -79,7 +79,7 @@ The Message page is a page where the user can view the contacts he has messaged.
 
 On the Message page, users can see the list of people they've messaged. Contact information for each person (such as name, username or profile photo) and a summary of the last received or sent message can be viewed.
 
-Users can re-message to whomever they want in the messaging list. This option can be used to continue the messaging process or to communicate about a new topic.
+Users can re-mes    sage to whomever they want in the messaging list. This option can be used to continue the messaging process or to communicate about a new topic.
 
 Also, users can delete messages from the Message page.
 
